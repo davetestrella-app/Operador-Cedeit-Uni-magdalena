@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
+  
+  /* CEDEIT Premium Branding Colors */
+  --color-cedeit-blue-950: #002244;
+  --color-cedeit-blue-900: #002D5E;
+  --color-cedeit-blue-800: #003B7A; /* Core Brand Blue */
+  --color-cedeit-blue-700: #004E9E;
+  --color-cedeit-blue-600: #005FBF;
+  --color-cedeit-blue-500: #0077F2;
+  --color-cedeit-orange-600: #C8460B;
+  --color-cedeit-orange-500: #F26522; /* Core Brand Orange */
+  --color-cedeit-orange-400: #FA8146;
+  --color-cedeit-orange-300: #FF9E6E;
+  --color-cedeit-orange-100: #FFEFE7;
+  --color-cedeit-blue-100: #E6F0FA;
+}
+
+/* Smooth Scrolling & Custom Base Styling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F8FAFC;
+  color: #1E293B;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Custom modern button pulsing effect */
+@keyframes custom-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(242, 101, 34, 0.4);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 8px 30px rgba(242, 101, 34, 0.6);
+  }
+}
+
+.animate-btn-pulse {
+  animation: custom-pulse 2s infinite ease-in-out;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float-slow 4s infinite ease-in-out;
+}
+
