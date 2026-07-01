@@ -162,7 +162,9 @@ export default function App() {
       desc: "Profundiza en la investigación educativa y transforma realidades desde el conocimiento.",
       image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=600&auto=format&fit=crop",
       badge: "Postgrado Oficial",
-      details: "Formación investigativa de alto impacto para potenciar el escalafón docente."
+      details: "Formación investigativa de alto impacto para potenciar el escalafón docente.",
+      university: "Universidad Iberoamericana",
+      univAbbr: "IBERO"
     },
     {
       id: "profesional-deporte",
@@ -170,7 +172,9 @@ export default function App() {
       desc: "Fórmate como profesional íntegro en el ámbito deportivo, recreativo y de la actividad física.",
       image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=600&auto=format&fit=crop",
       badge: "Pregrado Profesional",
-      details: "Enfoque integral para gestores deportivos y entrenadores de alta competencia."
+      details: "Enfoque integral para gestores deportivos y entrenadores de alta competencia.",
+      university: "Universidad del Magdalena",
+      univAbbr: "UNIMAG"
     },
     {
       id: "licenciatura-lengua",
@@ -178,7 +182,9 @@ export default function App() {
       desc: "Forma personas críticas y creativas a través del lenguaje, la literatura y la comunicación.",
       image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600&auto=format&fit=crop",
       badge: "Pregrado Docente",
-      details: "Lidera los procesos de lectura, escritura y pensamiento crítico en la región."
+      details: "Lidera los procesos de lectura, escritura y pensamiento crítico en la región.",
+      university: "Universidad del Magdalena",
+      univAbbr: "UNIMAG"
     },
     {
       id: "atencion-infancia",
@@ -186,7 +192,9 @@ export default function App() {
       desc: "Prepárate para acompañar el desarrollo integral de niños y niñas en sus primeros años de vida.",
       image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop",
       badge: "Especializado",
-      details: "Formación clave para responder al cuidado y estimulación oportuna de la niñez."
+      details: "Formación clave para responder al cuidado y estimulación oportuna de la niñez.",
+      university: "Universidad del Magdalena",
+      univAbbr: "UNIMAG"
     },
     {
       id: "licenciatura-matematicas",
@@ -194,7 +202,9 @@ export default function App() {
       desc: "Desarrolla el pensamiento lógico y matemático con enfoque pedagógico e innovador.",
       image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=600&auto=format&fit=crop",
       badge: "Pregrado Docente",
-      details: "Métodos modernos y didácticos para la enseñanza de las ciencias exactas."
+      details: "Métodos modernos y didácticos para la enseñanza de las ciencias exactas.",
+      university: "Universidad del Magdalena",
+      univAbbr: "UNIMAG"
     },
     {
       id: "seguridad-salud",
@@ -202,7 +212,9 @@ export default function App() {
       desc: "Promueve entornos laborales seguros y saludables con enfoque integral y preventivo.",
       image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop",
       badge: "Alta Demanda Laboral",
-      details: "Diseña, gestiona y previene riesgos profesionales según las normativas vigentes."
+      details: "Diseña, gestiona y previene riesgos profesionales según las normativas vigentes.",
+      university: "Universidad del Magdalena",
+      univAbbr: "UNIMAG"
     }
   ];
 
@@ -228,9 +240,9 @@ export default function App() {
     },
     {
       title: "Convenio universitario reconocido",
-      desc: "Programas académicos oficiales otorgados en convenio formal con la prestigiosa Universidad del Magdalena.",
+      desc: "Programas académicos oficiales otorgados en convenio formal con prestigiosas instituciones de educación superior públicas y privadas.",
       icon: GraduationCap,
-      badge: "Prestigio Público"
+      badge: "Prestigio"
     },
     {
       title: "Atención rápida por WhatsApp",
@@ -247,8 +259,8 @@ export default function App() {
   ];
 
   // Simple Helper to handle custom WhatsApp navigation for specific programs
-  const handleProgramClick = (programName: string) => {
-    const customMsg = `Hola, deseo recibir información sobre el programa de ${programName} ofrecido por CEDEIT en convenio con la Universidad del Magdalena.`;
+  const handleProgramClick = (programName: string, universityName: string) => {
+    const customMsg = `Hola, deseo recibir información sobre el programa de ${programName} ofrecido por CEDEIT en convenio con la ${universityName}.`;
     window.open(getWhatsAppLink(customMsg), "_blank", "noopener,noreferrer");
   };
 
@@ -260,7 +272,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="flex items-center gap-2 font-medium tracking-wide">
             <span className="flex h-2 w-2 rounded-full bg-cedeit-orange-500 animate-pulse" />
-            <span className="text-cedeit-orange-300 font-bold uppercase text-[10px]">OPERADOR OFICIAL CEDEIT</span> • Inscripciones Abiertas para el Convenio Universidad del Magdalena
+            <span className="text-cedeit-orange-300 font-bold uppercase text-[10px]">OPERADOR OFICIAL CEDEIT</span> • Inscripciones Abiertas para Convenios Universitarios (U. del Magdalena / Iberoamericana)
           </p>
           <div className="flex items-center gap-4">
             <a 
@@ -288,7 +300,7 @@ export default function App() {
                 <span className="text-[9px] bg-cedeit-orange-500 text-white font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider">Operador</span>
               </div>
               <p className="text-[10px] text-slate-500 font-semibold tracking-wide flex items-center gap-1">
-                Acompañamiento <span className="text-cedeit-orange-500">•</span> Convenio U. del Magdalena
+                Acompañamiento <span className="text-cedeit-orange-500">•</span> Convenios Universitarios Oficiales
               </p>
             </div>
           </div>
@@ -437,7 +449,7 @@ export default function App() {
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-cedeit-blue-800 to-cedeit-orange-500 mx-auto mt-4 rounded-full" />
             <p className="mt-5 text-slate-500 text-base sm:text-lg font-light leading-relaxed">
-              En alianza estratégica con la Universidad del Magdalena, te presentamos alternativas de alta calidad con horarios, metodología y financiación ideales para ti.
+              En alianza estratégica con la Universidad del Magdalena y la Universidad Iberoamericana, te presentamos alternativas de alta calidad con horarios, metodología y financiación ideales para ti.
             </p>
           </div>
 
@@ -467,13 +479,17 @@ export default function App() {
                   
                   {/* Logo Indicator */}
                   <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[9px] font-bold text-cedeit-blue-900 flex items-center gap-1 border border-slate-200">
-                    <Award className="h-3 w-3 text-cedeit-orange-500" /> CEDEIT • UNIMAG
+                    <Award className="h-3 w-3 text-cedeit-orange-500" /> CEDEIT • {program.univAbbr}
                   </div>
                 </div>
 
                 {/* Details Content */}
                 <div className="p-6 sm:p-8 flex-grow flex flex-col justify-between">
                   <div className="space-y-3">
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 tracking-wide">
+                      <School className="h-3.5 w-3.5 text-cedeit-orange-500 flex-shrink-0" />
+                      <span>Convenio {program.university}</span>
+                    </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-cedeit-blue-900 group-hover:text-cedeit-orange-500 transition-colors font-display line-clamp-2">
                       {program.name}
                     </h3>
@@ -489,7 +505,7 @@ export default function App() {
                   {/* Immediate Action Button */}
                   <div className="pt-6 mt-6 border-t border-slate-100">
                     <button
-                      onClick={() => handleProgramClick(program.name)}
+                      onClick={() => handleProgramClick(program.name, program.university)}
                       className="w-full bg-slate-50 hover:bg-cedeit-orange-500 text-cedeit-blue-900 hover:text-white font-extrabold text-sm py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 group-hover:bg-cedeit-orange-100/50 transition-all border border-slate-200/50 hover:border-cedeit-orange-500 cursor-pointer"
                     >
                       <MessageSquare className="h-4 w-4" />
